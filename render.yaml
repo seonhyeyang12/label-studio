@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: label-studio
+    env: python
+    plan: starter
+    branch: main
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "label-studio start --port 10000"
+    envVars:
+      - key: LABEL_STUDIO_USERNAME
+        value: admin
+      - key: LABEL_STUDIO_PASSWORD
+        value: yourpassword
+      - key: PORT
+        value: 10000
